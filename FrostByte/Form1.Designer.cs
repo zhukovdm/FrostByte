@@ -83,7 +83,7 @@
 			this.lbHeart.AutoSize = true;
 			this.lbHeart.Font = new System.Drawing.Font("Maiandra GD", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbHeart.ForeColor = System.Drawing.Color.Red;
-			this.lbHeart.Location = new System.Drawing.Point(817, 15);
+			this.lbHeart.Location = new System.Drawing.Point(815, 15);
 			this.lbHeart.Name = "lbHeart";
 			this.lbHeart.Size = new System.Drawing.Size(33, 42);
 			this.lbHeart.TabIndex = 5;
@@ -94,7 +94,7 @@
 			this.lbFriend.AutoSize = true;
 			this.lbFriend.Font = new System.Drawing.Font("Maiandra GD", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbFriend.ForeColor = System.Drawing.Color.Yellow;
-			this.lbFriend.Location = new System.Drawing.Point(817, 62);
+			this.lbFriend.Location = new System.Drawing.Point(815, 62);
 			this.lbFriend.Name = "lbFriend";
 			this.lbFriend.Size = new System.Drawing.Size(33, 42);
 			this.lbFriend.TabIndex = 6;
@@ -105,7 +105,7 @@
 			this.lbBullet.AutoSize = true;
 			this.lbBullet.Font = new System.Drawing.Font("Maiandra GD", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbBullet.ForeColor = System.Drawing.Color.Cyan;
-			this.lbBullet.Location = new System.Drawing.Point(817, 110);
+			this.lbBullet.Location = new System.Drawing.Point(815, 109);
 			this.lbBullet.Name = "lbBullet";
 			this.lbBullet.Size = new System.Drawing.Size(33, 42);
 			this.lbBullet.TabIndex = 7;
@@ -147,7 +147,7 @@
 			// pbBullet
 			// 
 			this.pbBullet.Image = global::FrostByte.Properties.Resources.Bullet;
-			this.pbBullet.Location = new System.Drawing.Point(771, 117);
+			this.pbBullet.Location = new System.Drawing.Point(771, 113);
 			this.pbBullet.Name = "pbBullet";
 			this.pbBullet.Size = new System.Drawing.Size(30, 30);
 			this.pbBullet.TabIndex = 4;

@@ -83,9 +83,6 @@ namespace FrostByte
                 case Keys.Enter:
                     buttons.Enter = true;
                     break;
-                case Keys.Space:
-                    buttons.Space = true;
-                    break;
                 case Keys.Up:
                     buttons.Up = true;
                     break;
@@ -123,9 +120,6 @@ namespace FrostByte
             switch (e.KeyCode) {
                 case Keys.Enter:
                     buttons.Enter = false;
-                    break;
-                case Keys.Space:
-                    buttons.Space = false;
                     break;
                 case Keys.Up:
                     buttons.Up = false;
