@@ -18,7 +18,7 @@
             this.col_dir = col_dir;
         }
 
-        public abstract void GetNewPosition();
+        protected abstract void getNewPosition();
         public abstract void Move();
     }
 
@@ -27,7 +27,7 @@
         public Tongue(Map map, int row, int col, int row_dir, int col_dir)
             : base(map, row, col, row_dir, col_dir) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row + row_dir;
             col_new = col + col_dir;
@@ -35,7 +35,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
 
             // stone is in front, change direction
             if (!map.TryMoveNPC(this, row_new, col_new)) {
@@ -58,7 +58,7 @@
         public Triangle(Map map, int row, int col, int row_dir, int col_dir)
             : base(map, row, col, row_dir, col_dir) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row + row_dir;
             col_new = col + col_dir;
@@ -66,7 +66,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
 
             // stone is found
             if (!map.TryMoveNPC(this, row_new, col_new))
@@ -98,7 +98,7 @@
         public Alien(Map map, int row, int col, int row_dir, int col_dir)
             : base(map, row, col, row_dir, col_dir) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             // corner reflection
             if (map.IsStone(row + row_dir, col) && map.IsStone(row, col + col_dir)) {
@@ -125,7 +125,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
             if (!map.TryMoveNPC(this, row_new, col_new)) {
                 row_dir *= -1;
                 col_dir *= -1;
@@ -140,7 +140,7 @@
         public Jellyfish(Map map, int row, int col)
             : base(map, row, col, 0, 0) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row + dir[map.rnd.Next(dir.Length)];
             col_new = col + dir[map.rnd.Next(dir.Length)];
@@ -148,7 +148,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
             map.TryMoveNPC(this, row_new, col_new);
         }
     }
@@ -160,7 +160,7 @@
         public Skull(Map map, int row, int col)
             : base(map, row, col, 0, 0) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row;
             col_new = col;
@@ -176,7 +176,7 @@
             }
         }
 
-        public override void Move() => GetNewPosition();
+        public override void Move() => getNewPosition();
     }
 
     class Monster : MovingPiece
@@ -241,7 +241,7 @@
             map.SetPieceView(this, row, col, view);
         }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row;
             col_new = col;
@@ -289,7 +289,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
             if (row_new != row || col_new != col) {
                 map.TryMoveNPC(this, row_new, col_new);
             }
@@ -301,7 +301,7 @@
         public Bullet(Map map, int row, int col, int row_dir, int col_dir)
             : base(map, row, col, row_dir, col_dir) { }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row + row_dir;
             col_new = col + col_dir;
@@ -309,7 +309,7 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
             map.TryMoveBullet(this, row_new, col_new);
         }
     }
@@ -326,7 +326,7 @@
             jump = fall = false;
         }
 
-        public override void GetNewPosition()
+        protected override void getNewPosition()
         {
             row_new = row;
             col_new = col;
@@ -385,7 +385,7 @@
             // new bullet and hero don't collide
             if ((row_bullet != row || col_bullet != col) &&
                 (row_bullet != row_new || col_bullet != col_new)) {
-                map.HeroBullets--;
+                map.BulletsCount--;
                 if (map.IsNpc(row_bullet, col_bullet) || map.IsVacant(row_bullet, col_bullet)) {
                     map.AddBullet(row_bullet, col_bullet, row_bullet - row, col_bullet - col);
                 }
@@ -394,18 +394,18 @@
 
         public override void Move()
         {
-            GetNewPosition();
+            getNewPosition();
 
             // hero has bullets -> check if fire
-            if (map.HeroBullets > 0) { isFire(); }
+            if (map.BulletsCount > 0) { isFire(); }
 
             if (row_new != row || col_new != col) {
                 if (map.IsVacant(row_new, col_new) || map.IsTreasure(row_new, col_new)) {
                     map.MoveHero(row_new, col_new);
                 } else if (map.IsNpc(row_new, col_new)) {
-                    map.KolizeHrdinaNPC(row_new, col_new);
+                    map.CollisionHeroNpc(row_new, col_new);
                 } else if (map.IsLevel(row_new, col_new)) {
-                    map.HrdinaNaJinouUroven(row_new, col_new);
+                    map.MoveHeroToLevel(row_new, col_new);
                 } else {
                     // wall, do nothing
                 }
