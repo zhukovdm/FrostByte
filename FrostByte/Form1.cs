@@ -201,7 +201,7 @@ namespace FrostByte
                         foreach (var control in cEnd) {
                             control.Visible = true;
                         }
-                        MessageBox.Show("You winned!");
+                        MessageBox.Show("You win!");
                         map.Clear();
                         tmEnd.Enabled = true;
                         break;
@@ -217,7 +217,7 @@ namespace FrostByte
                             control.Visible = true;
                         }
 
-                        MessageBox.Show("You losed!");
+                        MessageBox.Show("You lose!");
                         map.Clear();
                         tmEnd.Enabled = true;
                         break;
