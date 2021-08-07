@@ -46,6 +46,13 @@ namespace FrostByte
             };
         }
 
+        private void setVisibility(List<Control> controls, bool visibility)
+		{
+			for (int i = 0; i < controls.Count; i++) {
+                controls[i].Visible = visibility;
+			}
+		}
+
         private void Form1_Load(object sender, EventArgs e)
         {
             buttons = new Buttons();
@@ -55,21 +62,10 @@ namespace FrostByte
                 timer.Interval = tmInterval;
             }
 
-            foreach (var control in cIntro) {
-                control.Visible = true;
-            }
-
-            foreach (var control in cGame) {
-                control.Visible = false;
-            }
-
-            foreach (var control in cPause) {
-                control.Visible = false;
-            }
-
-            foreach (var control in cEnd) {
-                control.Visible = false;
-            }
+            setVisibility(cIntro, true);
+            setVisibility(cGame, false);
+            setVisibility(cPause, false);
+            setVisibility(cEnd, false);
 
             tmIntro.Enabled = true;
         }
@@ -155,13 +151,8 @@ namespace FrostByte
             if (buttons.Enter) {
                 tmIntro.Enabled = false;
 
-                foreach (var control in cIntro) {
-                    control.Visible = false;
-                }
-
-                foreach (var control in cGame) {
-                    control.Visible = true;
-                }
+                setVisibility(cIntro, false);
+                setVisibility(cGame, true);
 
                 graphics = CreateGraphics();
                 map = new Map(graphics, buttons);
@@ -196,13 +187,8 @@ namespace FrostByte
                         var winLose = map.state == State.Win ? "win" : "lose";
                         lbWinLose.Text = "You " + winLose + "!";
 
-                        foreach (var control in cGame) {
-                            control.Visible = false;
-                        }
-
-                        foreach (var control in cEnd) {
-                            control.Visible = true;
-                        }
+                        setVisibility(cGame, false);
+                        setVisibility(cEnd, true);
 
                         tmEnd.Enabled = true;
                         break;
@@ -226,15 +212,8 @@ namespace FrostByte
         {
             if (buttons.Enter) {
                 tmEnd.Enabled = false;
-
-                foreach (var control in cEnd) {
-                    control.Visible = false;
-                }
-
-                foreach (var control in cGame) {
-                    control.Visible = true;
-                }
-
+                setVisibility(cEnd, false);
+                setVisibility(cGame, true);
                 graphics = CreateGraphics();
                 map = new Map(graphics, buttons);
                 tmGame.Enabled = true;
