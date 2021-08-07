@@ -23,7 +23,7 @@ namespace FrostByte
             InitializeComponent();
 
             cIntro = new List<Control>() {
-                pbIntro, lbPressEnter
+                pbIntro, lbContinue
             };
 
             cGame = new List<Control>() {
@@ -38,7 +38,7 @@ namespace FrostByte
             };
 
             cEnd = new List<Control>() {
-                lbEnd
+                lbRepeat, lbWinLose
             };
 
             timers = new List<Timer>() {
@@ -177,6 +177,7 @@ namespace FrostByte
                 tmPause.Enabled = true;
             } else {
                 switch (map.state) {
+
                     case State.InProgress:
                         map.MoveAllPieces();
                         map.Draw();
@@ -188,21 +189,13 @@ namespace FrostByte
                         break;
 
                     case State.Win:
-                        tmGame.Enabled = false;
-                        foreach (var control in cGame) {
-                            control.Visible = false;
-                        }
-                        foreach (var control in cEnd) {
-                            control.Visible = true;
-                        }
-                        MessageBox.Show("You win!");
-                        map.Clear();
-                        tmEnd.Enabled = true;
-                        break;
-
                     case State.Lose:
                         tmGame.Enabled = false;
-                        
+                        map.Clear();
+
+                        var winLose = map.state == State.Win ? "win" : "lose";
+                        lbWinLose.Text = "You " + winLose + "!";
+
                         foreach (var control in cGame) {
                             control.Visible = false;
                         }
@@ -211,8 +204,6 @@ namespace FrostByte
                             control.Visible = true;
                         }
 
-                        MessageBox.Show("You lose!");
-                        map.Clear();
                         tmEnd.Enabled = true;
                         break;
 
@@ -243,6 +234,7 @@ namespace FrostByte
                 foreach (var control in cGame) {
                     control.Visible = true;
                 }
+
                 graphics = CreateGraphics();
                 map = new Map(graphics, buttons);
                 tmGame.Enabled = true;

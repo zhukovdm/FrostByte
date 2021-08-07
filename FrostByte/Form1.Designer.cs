@@ -31,20 +31,21 @@
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.tmIntro = new System.Windows.Forms.Timer(this.components);
-			this.lbPressEnter = new System.Windows.Forms.Label();
+			this.lbContinue = new System.Windows.Forms.Label();
 			this.tmGame = new System.Windows.Forms.Timer(this.components);
 			this.tmPause = new System.Windows.Forms.Timer(this.components);
 			this.tmEnd = new System.Windows.Forms.Timer(this.components);
 			this.lbHeart = new System.Windows.Forms.Label();
 			this.lbFriend = new System.Windows.Forms.Label();
 			this.lbBullet = new System.Windows.Forms.Label();
-			this.lbEnd = new System.Windows.Forms.Label();
+			this.lbRepeat = new System.Windows.Forms.Label();
 			this.lbPause = new System.Windows.Forms.Label();
 			this.lbLevels = new System.Windows.Forms.Label();
 			this.pbBullet = new System.Windows.Forms.PictureBox();
 			this.pbHeart = new System.Windows.Forms.PictureBox();
 			this.pbFriend = new System.Windows.Forms.PictureBox();
 			this.pbIntro = new System.Windows.Forms.PictureBox();
+			this.lbWinLose = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pbBullet)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbHeart)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbFriend)).BeginInit();
@@ -55,16 +56,16 @@
 			// 
 			this.tmIntro.Tick += new System.EventHandler(this.tmIntro_Tick);
 			// 
-			// lbPressEnter
+			// lbContinue
 			// 
-			this.lbPressEnter.AutoSize = true;
-			this.lbPressEnter.Font = new System.Drawing.Font("Maiandra GD", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbPressEnter.ForeColor = System.Drawing.Color.Cyan;
-			this.lbPressEnter.Location = new System.Drawing.Point(105, 413);
-			this.lbPressEnter.Name = "lbPressEnter";
-			this.lbPressEnter.Size = new System.Drawing.Size(666, 77);
-			this.lbPressEnter.TabIndex = 1;
-			this.lbPressEnter.Text = "Press Enter to continue";
+			this.lbContinue.AutoSize = true;
+			this.lbContinue.Font = new System.Drawing.Font("Maiandra GD", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbContinue.ForeColor = System.Drawing.Color.Cyan;
+			this.lbContinue.Location = new System.Drawing.Point(105, 413);
+			this.lbContinue.Name = "lbContinue";
+			this.lbContinue.Size = new System.Drawing.Size(666, 77);
+			this.lbContinue.TabIndex = 1;
+			this.lbContinue.Text = "Press Enter to continue";
 			// 
 			// tmGame
 			// 
@@ -111,16 +112,16 @@
 			this.lbBullet.TabIndex = 7;
 			this.lbBullet.Text = "?";
 			// 
-			// lbEnd
+			// lbRepeat
 			// 
-			this.lbEnd.AutoSize = true;
-			this.lbEnd.Font = new System.Drawing.Font("Maiandra GD", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbEnd.ForeColor = System.Drawing.Color.Cyan;
-			this.lbEnd.Location = new System.Drawing.Point(144, 259);
-			this.lbEnd.Name = "lbEnd";
-			this.lbEnd.Size = new System.Drawing.Size(601, 77);
-			this.lbEnd.TabIndex = 8;
-			this.lbEnd.Text = "Press Enter to repeat";
+			this.lbRepeat.AutoSize = true;
+			this.lbRepeat.Font = new System.Drawing.Font("Maiandra GD", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbRepeat.ForeColor = System.Drawing.Color.Cyan;
+			this.lbRepeat.Location = new System.Drawing.Point(144, 331);
+			this.lbRepeat.Name = "lbRepeat";
+			this.lbRepeat.Size = new System.Drawing.Size(601, 77);
+			this.lbRepeat.TabIndex = 8;
+			this.lbRepeat.Text = "Press Enter to repeat";
 			// 
 			// lbPause
 			// 
@@ -147,7 +148,7 @@
 			// pbBullet
 			// 
 			this.pbBullet.Image = global::FrostByte.Properties.Resources.Bullet;
-			this.pbBullet.Location = new System.Drawing.Point(771, 113);
+			this.pbBullet.Location = new System.Drawing.Point(771, 115);
 			this.pbBullet.Name = "pbBullet";
 			this.pbBullet.Size = new System.Drawing.Size(30, 30);
 			this.pbBullet.TabIndex = 4;
@@ -180,20 +181,32 @@
 			this.pbIntro.TabIndex = 0;
 			this.pbIntro.TabStop = false;
 			// 
+			// lbWinLose
+			// 
+			this.lbWinLose.AutoSize = true;
+			this.lbWinLose.Font = new System.Drawing.Font("Maiandra GD", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbWinLose.ForeColor = System.Drawing.Color.Red;
+			this.lbWinLose.Location = new System.Drawing.Point(290, 195);
+			this.lbWinLose.Name = "lbWinLose";
+			this.lbWinLose.Size = new System.Drawing.Size(77, 77);
+			this.lbWinLose.TabIndex = 11;
+			this.lbWinLose.Text = "?!";
+			// 
 			// Form1
 			// 
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(864, 601);
+			this.Controls.Add(this.lbWinLose);
 			this.Controls.Add(this.lbLevels);
 			this.Controls.Add(this.lbPause);
-			this.Controls.Add(this.lbEnd);
+			this.Controls.Add(this.lbRepeat);
 			this.Controls.Add(this.lbBullet);
 			this.Controls.Add(this.lbFriend);
 			this.Controls.Add(this.lbHeart);
 			this.Controls.Add(this.pbBullet);
 			this.Controls.Add(this.pbHeart);
 			this.Controls.Add(this.pbFriend);
-			this.Controls.Add(this.lbPressEnter);
+			this.Controls.Add(this.lbContinue);
 			this.Controls.Add(this.pbIntro);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -216,17 +229,18 @@
         private System.Windows.Forms.PictureBox pbHeart;
         private System.Windows.Forms.PictureBox pbBullet;
 
-        private System.Windows.Forms.Label lbPressEnter;
+        private System.Windows.Forms.Label lbContinue;
         private System.Windows.Forms.Label lbHeart;
         private System.Windows.Forms.Label lbFriend;
         private System.Windows.Forms.Label lbBullet;
-        private System.Windows.Forms.Label lbEnd;
+        private System.Windows.Forms.Label lbRepeat;
         private System.Windows.Forms.Label lbPause;
         private System.Windows.Forms.Label lbLevels;
+		private System.Windows.Forms.Label lbWinLose;
 
-        private System.Windows.Forms.Timer tmIntro;
+		private System.Windows.Forms.Timer tmIntro;
         private System.Windows.Forms.Timer tmGame;
         private System.Windows.Forms.Timer tmPause;
         private System.Windows.Forms.Timer tmEnd;
-    }
+	}
 }
