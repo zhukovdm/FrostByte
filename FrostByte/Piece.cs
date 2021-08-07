@@ -353,6 +353,10 @@
                 jump = false;
             }
 
+            if (map.buttons.Down) {
+                jump = false;
+			}
+
             // no jump and no wall under -> fall
             if (!jump && !map.IsWall(row + 1, col)) {
                 fall = true;
