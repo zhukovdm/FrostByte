@@ -47,11 +47,11 @@ namespace FrostByte
         }
 
         private void setVisibility(List<Control> controls, bool visibility)
-		{
-			for (int i = 0; i < controls.Count; i++) {
+        {
+            for (int i = 0; i < controls.Count; i++) {
                 controls[i].Visible = visibility;
-			}
-		}
+            }
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
