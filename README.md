@@ -63,6 +63,6 @@ There are several kinds of enemies with different behavior.
 | ![waterdrop.png](./Assets/Images/waterdrop.png) | `Water drop` behaves similar to a `Triangle`, but in vertical directions. |
 | ![jellyfish.png](./Assets/Images/jellyfish.png) | Moves of a `Jellyfish` could be in any direction and selected at random. |
 | ![skull.png](./Assets/Images/skull.png) | `Skull` doesn't move, but waits. If a bullet or the `Hero` itself is detected near a `Skull`, it jumps onto the `Hero` with **0.2** probability. |
-| ![monster.png](./Assets/Images/monster.png) | `Monster` moves alongside the floor in a selected directions. |
+| ![monster.png](./Assets/Images/monster.png) | `Monster` moves alongside the floor in a selected direction. |
 
 ![gui.png](./Assets/Images/gui.png)
