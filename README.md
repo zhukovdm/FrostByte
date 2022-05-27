@@ -7,8 +7,8 @@ A `.NET` implementation of the single-player arcade game inspired by ZX Spectrum
 
 The following dependencies are supposed to be satisfied on the target machine:
 
-- `Windows 10` and higher,
-- `dotnet-6.0.300` and higher.
+- `Windows 10` or higher,
+- `dotnet-6.0.300` or higher.
 
 # Build and run
 
@@ -16,7 +16,7 @@ Execute the following sequence of commands.
 
 ```console
 git clone https://github.com/zhukovdm/FrostByte.git
-cd .\FrostByte\FrostByte && dotnet run
+cd .\FrostByte\FrostByte ; dotnet run
 ```
 
 # Gameplay
