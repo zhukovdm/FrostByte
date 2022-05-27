@@ -5,9 +5,10 @@ A `.NET` implementation of the single-player arcade game inspired by ZX Spectrum
 
 # Dependencies
 
-The following programs are supposed to be installed on the target system.
+The following dependencies are supposed to be satisfied on the target machine:
 
-- `dotnet-6.0.300`
+- `Windows 10` and higher,
+- `dotnet-6.0.300` and higher.
 
 # Build and run
 
