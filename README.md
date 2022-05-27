@@ -1,6 +1,6 @@
 # Frost Byte
 
-A `.NET` implementation of the single-player arcade game inspired by ZX Spectrum
+`.NET` implementation of a single-player arcade game inspired by ZX Spectrum
 [Frost Byte](https://spectrumcomputing.co.uk/entry/1894/ZX-Spectrum/Frost_Byte).
 
 # Dependencies
@@ -23,6 +23,10 @@ cd .\FrostByte\FrostByte ; dotnet run
 
 The game implementes old-style pixel-oriented user interface. The meaning of
 each possible tile and the rules of the game are described below.
+
+**Caution:** tiles are drawn separately as part of a larger bitmap (design
+decision). As a consequence, rendering is resource-demanding and slow.
+Play with patience. 🤗
 
 Tiles ![empty.png](Assets/Images/empty.png) and ![wall.png](Assets/Images/wall.png)
 represent empty space and a wall respectively.
