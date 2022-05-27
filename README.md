@@ -47,12 +47,12 @@ enemies. Use `w`, `a`, `s` or `d` to let the `Hero` fire a bullet in a respectiv
 direction. If a bullet collide with an enemy, the enemy disappears.
 
 The game is a multi-level maze. Use portals to reach another levels. Portals
-are tile with numbers from **1** to **4** on it, e.g. ![portal.png](Assets/Images/portal.png).
+are tile with numbers on it, e.g. ![portal.png](Assets/Images/portal.png).
 
-The game could be paused and resumed at any time by pressing `Pause`. The player
-could exit the game by pressing `Esc`.
+The game could be paused and resumed via `Pause` button. The player could exit
+the game by pressing `Esc`.
 
-There are several kinds of enemies, each of them behaves differently.
+There are several kinds of enemies with different behavior.
 
 | Picture | Description |
 |---|---|
