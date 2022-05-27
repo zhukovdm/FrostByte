@@ -21,12 +21,12 @@ cd .\FrostByte\FrostByte ; dotnet run
 
 # Gameplay
 
-The game implementes old-style pixel-oriented user interface. The meaning of
-each possible tile and the rules of the game are described below.
-
 **Caution:** tiles are drawn separately as part of a larger bitmap (design
 decision). As a consequence, rendering is resource-demanding and slow.
 Play with patience. 🤗
+
+The game implementes old-style pixel-oriented user interface. The meaning of
+each possible tile and the rules of the game are described below.
 
 Tiles ![empty.png](Assets/Images/empty.png) and ![wall.png](Assets/Images/wall.png)
 represent empty space and a wall respectively.
