@@ -15,7 +15,7 @@ Execute the following sequence of commands.
 
 ```console
 git clone https://github.com/zhukovdm/FrostByte.git
-cd FrostByte && dotnet run --project .\FrostByte\FrostByte.csproj
+cd .\FrostByte\FrostByte && dotnet run
 ```
 
 # Gameplay
