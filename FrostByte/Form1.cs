@@ -10,20 +10,18 @@ namespace FrostByte
         Map map;
         Graphics graphics;
         Buttons buttons;
-        List<Control> cIntro;
-        List<Control> cGame;
-        List<Control> cPause;
-        List<Control> cEnd;
-        List<Timer> timers;
+        private readonly List<Control>
+            cIntro, cGame, cPause, cEnd;
+        private readonly List<Timer> timers;
 
-        int tmInterval = 200;
+        private readonly int tmInterval = 200;
 
         public Form1()
         {
             InitializeComponent();
 
             cIntro = new List<Control>() {
-                pbIntro, lbContinue
+                lbContinue
             };
 
             cGame = new List<Control>() {
